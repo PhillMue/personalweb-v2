@@ -4,12 +4,50 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | Welcome</title>
+    <title>Phillip Mue</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/app.css" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      
 		
 		<link rel="stylesheet" href="assets/css/main.css" />
+      <style>
+        /* code for animated blinking cursor */
+        .typed-cursor{
+            opacity: 1;
+            font-weight: 100;
+            -webkit-animation: blink 0.7s infinite;
+            -moz-animation: blink 0.7s infinite;
+            -ms-animation: blink 0.7s infinite;
+            -o-animation: blink 0.7s infinite;
+            animation: blink 0.7s infinite;
+        }
+        @-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-webkit-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-moz-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-ms-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-o-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+    </style>
   </head>
   <body>
 
@@ -36,16 +74,48 @@
 		<!-- Intro -->
 			<section id="intro" class="main style1 dark fullscreen">
 				<div class="content container 75%">
+<!--
+                    <div class="type-wrap">
 					<header>
 						<h2>Hey.</h2>
 					</header>
-					<p>Welcome to <strong>Phill's</strong> personal website
-					 <a href="http://html5up.net">detailing</a><strong><a href="http://getskel.com">, Who i Am</a></strong>,
-					What i Do <a href="http://html5up.net/license">and projects i've done</a>.</p>
+                     <div id="typed-strings">
+                         <p>Welcome to <strong>Phill's personal website</strong> </p>
+				<p>	<a href="http://html5up.net">detailing</a><em><a href="http://getskel.com">, Who i Am,</a></em></p>
+                         <p>What i Do </p>
+                      <p> <strong> <a href="http://html5up.net/license">and projects i've done</a></strong> </p>
+                        </div>
+                        <span id="typed" style="white-space:pre;"></span>
 					<footer>
 						<a href="#one" class="button style2 down">More</a>
 					</footer>
+                    </div>
+
+-->
+                    <h2>Hey.</h2>
+                <div class="type-wrap">
+            <div id="typed-strings">
+                <p>Welcome to<strong>Phill's</strong> personal website.</p>
+                <p>detailing <em>Who i Am,</em> What i Do</p>
+                <p>and projects i've done</p>
+                <p>Check it out!</p>
+            </div>
+            <span id="typed" style="white-space:pre;"></span>
+        </div>
 				</div>
+                
+<!--
+                <h2>Hey.</h2>
+                <div class="type-wrap">
+            <div id="typed-strings">
+                <p>Welcome to<strong>Phill's</strong> personal website.</p>
+                <p>detailing <em>Who i Am,</em> What i Do</p>
+                <p>and projects i've done</p>
+                <p>Check it out!</p>
+            </div>
+            <span id="typed" style="white-space:pre;"></span>
+        </div>
+-->
 			</section>
 
 		<!-- One -->
@@ -161,5 +231,34 @@
     <script src="js/vendor/what-input.min.js"></script>
     <script src="js/foundation.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="../foundation-6/js/jquery-2.2.3.js"></script>
+      <script src="js/typed.js"></script>
+<!--    <script src="../foundation-6/js/typed.jst"> </script>-->
+    <script>
+        $(function() {
+            $("#typed").typed({
+                stringsElement: $('#typed-strings'),
+                typeSpeed: 30,
+                backDelay: 500,
+                loop: false,
+                contentType: 'html', // or text
+                // defaults to false for infinite loop
+                loopCount: false,
+                callback: function() {
+                    foo();
+                },
+                resetCallback: function() {
+                    newTyped();
+                }
+            });
+            $(".reset").click(function() {
+                $("#typed").typed('reset');
+            });
+        });
+        function newTyped() { /* A new typed object */ }
+        function foo() {
+            console.log("Callback");
+        }
+    </script>
   </body>
 </html>
